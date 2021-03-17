@@ -41,10 +41,5 @@ public class JuniorSavingsAccount extends SavingsAccount{
 				System.out.println("invalid pin");
 			}
 		}
-	@Override
-	public String toString() {
-		return "JuniorSavingsAccount [guardianName=" + guardianName + ", accountNo=" + accountNo + ", balance="
-				+ balance + ", pin=" + pin  + "]";
-	}
 	
 }

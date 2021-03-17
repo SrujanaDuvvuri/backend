@@ -1,6 +1,5 @@
 package oopsproject;
 
-import com.Sample;
 
 public class TestInheritance {
 
@@ -8,7 +7,8 @@ public class TestInheritance {
 
 		JuniorSavingsAccount account = new JuniorSavingsAccount();
 		account.accountNo = 101;
-		account.balance = 1500;
+//		account.balance = 1500;
+		account.setBalance(1000);
 		account.pin = 1230;
 		account.guardianName = "Srujana";
 		
@@ -21,8 +21,8 @@ public class TestInheritance {
 		account2.deposit(1100);
 		System.out.println(account2.toString());
 		
-		Sample s = new Sample();
-		s.testProtected();
+//		Sample s = new Sample();
+//		s.testProtected();
 	}
 
 }

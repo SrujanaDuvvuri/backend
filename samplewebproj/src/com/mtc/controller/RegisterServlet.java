@@ -18,12 +18,12 @@ public class RegisterServlet extends HttpServlet {
        
    
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("***RegisterServlet : doGet()***");
 		
 		String firstname = request.getParameter("firstname");
 		String email = request.getParameter("email");		
-		String lastname = request.getParameter("lastname");
+		String username = request.getParameter("username");
 		String city = request.getParameter("city");
 		String state = request.getParameter("state");
 		
@@ -42,5 +42,11 @@ public class RegisterServlet extends HttpServlet {
 		
 		out.println("</body></html>");
 	}
+	
+//	@Override
+//		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//			// TODO Auto-generated method stub
+//			super.doPost(req, resp);
+//		}
 
 }

@@ -17,6 +17,12 @@ public class updateProductServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 6548609886019896811L;
 
+//@Override
+//protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//	// TODO Auto-generated method stub
+//	super.doOptions(req, resp);
+//}	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		System.out.println("hello there3W");

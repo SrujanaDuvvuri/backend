@@ -5,8 +5,26 @@ public class SavingsAccount {
 
 	
 	int accountNo;	
-	float balance;
+	private                float balance;
+	public float getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(float balance) {
+		this.balance = balance;
+	}
+
+
 	int pin;
+	
+	public boolean isPinValid( int pin) {
+		if(this.pin == pin) {
+			
+			return true;
+		}
+		return false;
+	}
 	final static int minBalance = 500;
 	
 	public static int getMinBalance() {

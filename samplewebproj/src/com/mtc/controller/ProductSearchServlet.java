@@ -2,7 +2,11 @@ package com.mtc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,23 +37,31 @@ public class ProductSearchServlet extends HttpServlet {
 			ProductDAO productDAO = new ProductDAO();
 			Product product = productDAO.findById(pid);
 		
-		PrintWriter out = response.getWriter();
-		
-		out.println("<html><body>");
-		out.println("<h2 align='center'>Product Record</h2>");
-		out.println("<div align=center><table border=2>");
-		out.println("<tr>");
-			out.print("<th>ProductId</th><th>Name</th><th>Price</th><th>Description</th>");
-		out.println("</tr>");
-		out.println("<tr>");
-			out.println("<td>"+product.getId()+"</td>");
-			out.println("<td>"+product.getName()+"</td>");
-			out.println("<td>"+product.getPrice()+"</td>");
-			out.println("<td>"+product.getDescription()+"</td>");
-		out.println("</tr>");
-		out.println("</table></div>");
-		out.println("</body></html>");
-		
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("viewProducts.jsp");
+			
+			//adding the data to the scope object..
+								//name , object reference
+			request.setAttribute("product", product);	
+			
+			requestDispatcher.forward(request, response);
+			
+//		PrintWriter out = response.getWriter();
+//		
+//		out.println("<html><body>");
+//		out.println("<h2 align='center'>Product Record</h2>");
+//		out.println("<div align=center><table border=2>");
+//		out.println("<tr>");
+//			out.print("<th>ProductId</th><th>Name</th><th>Price</th><th>Description</th>");
+//		out.println("</tr>");
+//		out.println("<tr>");
+//			out.println("<td>"+product.getId()+"</td>");
+//			out.println("<td>"+product.getName()+"</td>");
+//			out.println("<td>"+product.getPrice()+"</td>");
+//			out.println("<td>"+product.getDescription()+"</td>");
+//		out.println("</tr>");
+//		out.println("</table></div>");
+//		out.println("</body></html>");
+//		
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
